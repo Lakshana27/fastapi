@@ -20,7 +20,7 @@ This project implements a user registration and authentication system using Fast
 
 - **user_services.py**: Implements user-related services such as user creation, profile updates, and activity status management.
 
-- **auth_services.py**: Handles user authentication and JWT token generation.
+- **oauth_services.py**: Handles user authentication and JWT token generation.
 
 - **utils.py**: Utility functions including password hashing and token verification.
 
@@ -30,7 +30,7 @@ This project implements a user registration and authentication system using Fast
 
 - **user_schemas.py**: Contains Pydantic schemas for user-related data validation and serialization.
 
-- **auth_schemas.py**: Defines Pydantic schemas for authentication data serialization.
+- **oauth_schemas.py**: Defines Pydantic schemas for authentication data serialization.
 
 ## Getting Started
 

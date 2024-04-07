@@ -44,8 +44,7 @@ This project implements a user registration and authentication system using Fast
    ```bash
    pip install -r requirements.txt
 
-3. Set up environment variables:
-Set up environment variables by creating a '.env' file and providing values for 'DB_PATH', 'SECRET_KEY', 'ALGORITHM', and 'ACCESS_TOKEN_EXPIRE_MINUTES'.
+3. Set up environment variables by creating a '.env' file and providing values for 'DB_PATH', 'SECRET_KEY', 'ALGORITHM', and 'ACCESS_TOKEN_EXPIRE_MINUTES'.
 
 4. Run 'main.py' file
 

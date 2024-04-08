@@ -12,7 +12,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-oauth2scheme = OAuth2PasswordBearer(tokenUrl="/login")
+oauth2scheme = OAuth2PasswordBearer(tokenUrl="/Access-Token")
 
 bearer_scheme = HTTPBearer()
 

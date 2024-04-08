@@ -11,7 +11,7 @@ route = APIRouter()
 
 Base.metadata.create_all(bind=engine)
 
-@route.post("/User_Data/Generate_Token/login", tags=["Acces Token"])
+@route.post("/Access-Token", tags=["Acces Token"])
 async def get_token(username: str = Body(...), password: str = Body(...), db: Session = Depends(get_db)):
     return get_user_token(username, password, db)
 

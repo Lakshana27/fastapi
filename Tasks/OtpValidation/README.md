@@ -2,11 +2,6 @@
 
 This project is a FastAPI application for OTP (One-Time Password) validation. It provides endpoints for generating OTP, creating users, updating passwords, and generating access tokens.
 
-## Endpoints
-- **/user/create_user**: Create a new user.
-- **/user/otp_generation**: Generate OTP for user authentication.
-- **/user/update_password**: Update user password.
-- **/generate-token**: Generate access token for user authentication.
 
 ## Project Structure
 
@@ -34,6 +29,12 @@ This project is a FastAPI application for OTP (One-Time Password) validation. It
 - **schemas**: Contains Pydantic schema definitions.
   - **oauth_schemas.py**: Defines authentication-related schemas.
   - **user_schemas.py**: Defines user-related schemas.
+
+## Endpoints
+- **Generate Token**: `/generate-token` - POST method to generate JWT access tokens.
+- **Create User**: `/user/create_user` - POST method to create new user accounts.
+- **OTP Generation**: `/user/otp_generation` - POST method to generate OTPs.
+- **Update Password**: `/user/update_password` - PUT method to update user passwords.
 
 ## Dependencies
 

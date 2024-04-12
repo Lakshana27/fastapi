@@ -2,37 +2,11 @@
 
 This project is a FastAPI application for OTP (One-Time Password) validation. It provides endpoints for generating OTP, creating users, updating passwords, and generating access tokens.
 
-## Setup Instructions
-
-1. Clone the repository:
-
-    ```bash
-    git clone <repository_url>
-    ```
-
-2. Install dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Set up your environment variables by creating a `.env` file in the root directory and adding the following variables:
-
-    ```plaintext
-    DB_PATH = <database_connection_string>
-    SECRET_KEY = <your_secret_key>
-    ALGORITHM = <your_preferred_algorithm>
-    ACCESS_TOKEN_EXPIRE_MINUTES = <token_expiry_duration>
-    OTP_TIME_LIMIT = <otp_time_limit>
-    SENDER_EMAIL = <your_email>
-    SENDER_PASSWORD = <your_email_password>
-    ```
-
-4. Run the application:
-
-    ```bash
-    uvicorn main:app --reload
-    ```
+## Endpoints
+- **/user/create_user**: Create a new user.
+- **/user/otp_generation**: Generate OTP for user authentication.
+- **/user/update_password**: Update user password.
+- **/generate-token**: Generate access token for user authentication.
 
 ## Project Structure
 
@@ -69,3 +43,39 @@ This project is a FastAPI application for OTP (One-Time Password) validation. It
 - python-dotenv: Python library for parsing environment variables from .env files.
 - passlib: Password hashing library.
 - pyjwt: JSON Web Token implementation.
+  
+## Setup Instructions
+
+1. Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Set up your environment variables by creating a `.env` file in the root directory and adding the following variables:
+
+    ```plaintext
+    DB_PATH = <database_connection_string>
+    SECRET_KEY = <your_secret_key>
+    ALGORITHM = <your_preferred_algorithm>
+    ACCESS_TOKEN_EXPIRE_MINUTES = <token_expiry_duration>
+    OTP_TIME_LIMIT = <otp_time_limit>
+    SENDER_EMAIL = <your_email>
+    SENDER_PASSWORD = <your_email_password>
+    ```
+
+4. Run 'main.py' file or Run the application using uvicorn in cmd:
+
+    ```bash
+    uvicorn main:app --reload
+    ```
+
+5. Access the API documentation at http://127.0.0.1:8000/docs to explore available endpoints and interact with the application.
+
+

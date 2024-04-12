@@ -5,7 +5,7 @@ from datetime import timedelta, datetime, timezone
 from fastapi import HTTPException
 from jose import JWTError, jwt
 
-from OtpValidation.Schemas.oauth_schemas import TokenData
+from OtpValidation.schemas.oauth_schemas import TokenData
 
 
 load_dotenv()

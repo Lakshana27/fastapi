@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from OtpValidation.Schemas.user_schemas import OTP_Validation
-from OtpValidation.Schemas.oauth_schemas import TokenData
+from OtpValidation.schemas.user_schemas import OTP_Validation
+from OtpValidation.schemas.oauth_schemas import TokenData
 from OtpValidation.utils.get_db import get_db
-from OtpValidation.Services.generate_token import generate_token
+from OtpValidation.services.generate_token import generate_token
 
 route = APIRouter()
 

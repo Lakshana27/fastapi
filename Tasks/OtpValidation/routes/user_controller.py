@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from OtpValidation.Schemas.user_schemas import CreateUserData, NewPasswordRequest
-from OtpValidation.Schemas.oauth_schemas import TokenData
+from OtpValidation.schemas.user_schemas import CreateUserData, NewPasswordRequest
+from OtpValidation.schemas.oauth_schemas import TokenData
 from OtpValidation.utils.get_db import get_db
-from OtpValidation.Services.create_new_user import create_new_user 
-from OtpValidation.Services.generate_user_otp import generate_user_otp
-from OtpValidation.Services.change_user_password import change_user_password
+from OtpValidation.services.create_new_user import create_new_user 
+from OtpValidation.services.generate_user_otp import generate_user_otp
+from OtpValidation.services.change_user_password import change_user_password
 from OtpValidation.utils.get_current_user import  get_current_user
 
 route = APIRouter(prefix="/User")

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer, TIMESTAMP, func
-from OtpValidation.database.database_setup import Base
+from OtpValidation.database_setup.database import Base
 
 class UserData(Base):
     __tablename__ = "otp_table"

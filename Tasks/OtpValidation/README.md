@@ -4,31 +4,32 @@ This project is a FastAPI application for OTP (One-Time Password) validation. It
 
 
 ## Project Structure
-
+- **alembic**: Contains migration scripts for managing database schema changes using Alembic.
+  - `env.py`: Configuration file for Alembic migrations.
 - **main.py**: Entry point of the FastAPI application.
 - **routes**: Contains API routers.
-  - **auth_controller.py**: API endpoints for authentication, such as generating access tokens.
-  - **user_controller.py**: API endpoints for user-related operations, such as creating users and updating passwords.
-- **services**: Contains business logic.
-  - **access_otp.py**: Logic for accessing OTP.
-  - **create_new_user.py**: Logic for creating new users.
-  - **modify_password.py**: Logic for modifying passwords.
-  - **generate_access_token.py**: Logic for generating access tokens.
-- **utils**: Contains utility functions.
-  - **get_current_user.py**: Function to get the current user from the token.
-  - **get_otp.py**: Function to generate OTP.
-  - **get_session.py**: Function to get the database session.
-  - **get_user.py**: Function to retrieve user information from the database.
-  - **jwt_handling.py**: Functions for JWT token handling.
-  - **password_auth.py**: Functions for password hashing and verification.
-  - **send_otp.py**: Function to send OTP via email.
-- **database**: Contains database setup and models.
-  - **orm_setup.py**: Database engine setup.
-- **models**: Contains SQLAlchemy models.
-  - **UserTable.py**: Model for the user table.
-- **schemas**: Contains Pydantic schema definitions.
-  - **oauth_schemas.py**: Defines authentication-related schemas.
-  - **user_schemas.py**: Defines user-related schemas.
+  - `auth_controller.py`: API routes for user authentication and token generation.
+  - `user_controller.py`: API routes for user-related operations like user creation, OTP generation, and password updates.
+- **services**: Contains business logic for various operations.
+  - `create_new_user.py`: Logic for creating new users.
+  - `change_user_password.py`: Logic for modifying user passwords.
+  - `generate_user_otp.py`: Logic for generating and accessing OTPs.
+  - `generate_token.py`: Logic for generating access tokens after successful OTP validation.
+- **utils**: Contains utility functions used across the project.
+  - `get_current_user.py`: Utility for retrieving current user information from JWT token.
+  - `get_db.py`: Utility for managing database sessions.
+  - `get_otp.py`: Utility for generating random OTPs.
+  - `get_user.py`: Utility for retrieving user information from the database.
+  - `password_security.py`: Utility for hashing passwords and verifying password hashes.
+  - `send_otp.py`: Utility for sending OTPs via email.
+  - `token_management.py`: Utility for JWT token handling, including token creation and verification.
+- **database**: Contains database-related files.
+  - `database_setup.py`: Setup for SQLAlchemy ORM and database session management.
+- **models**: Contains SQLAlchemy models for database tables.
+  - `UserData.py`: Model for user data.
+- **schemas**: Contains Pydantic models for request/response data validation.
+  - `oauth_schemas.py`: Pydantic models for authentication-related data.
+  - `user_schemas.py`: Pydantic models for user-related data.
 
 ## Endpoints
 - **Generate Token**: `/generate-token` - POST method to generate JWT access tokens.
@@ -38,12 +39,16 @@ This project is a FastAPI application for OTP (One-Time Password) validation. It
 
 ## Dependencies
 
-- FastAPI: Web framework for building APIs with Python.
-- SQLAlchemy: SQL toolkit and Object-Relational Mapping (ORM) library.
-- uvicorn: ASGI server for running FastAPI applications.
-- python-dotenv: Python library for parsing environment variables from .env files.
-- passlib: Password hashing library.
-- pyjwt: JSON Web Token implementation.
+- **FastAPI**: Web framework for building APIs with Python.
+- **Uvicorn[standard]**: ASGI server for running FastAPI applications.
+- **SQLAlchemy**: SQL toolkit and Object-Relational Mapping (ORM) library for Python.
+- **Psycopg2**: PostgreSQL adapter for Python.
+- **Pydantic**: Data validation and settings management using Python type annotations.
+- **Pydantic[email]**: Pydantic extension for email validation.
+- **Python-Jose[cryptography]**: JSON Web Tokens (JWT) implementation in Python.
+- **Passlib[bcrypt]**: Password hashing library for Python.
+- **Alembic**: Database migration tool for SQLAlchemy.
+
   
 ## Setup Instructions
 

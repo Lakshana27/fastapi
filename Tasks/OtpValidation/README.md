@@ -58,7 +58,7 @@ This project is a FastAPI application for OTP (One-Time Password) validation. It
 - **models**: Contains SQLAlchemy models.
   - **UserTable.py**: Model for the user table.
 - **schemas**: Contains Pydantic schema definitions.
-  - **auth_schemas.py**: Defines authentication-related schemas.
+  - **oauth_schemas.py**: Defines authentication-related schemas.
   - **user_schemas.py**: Defines user-related schemas.
 
 ## Dependencies

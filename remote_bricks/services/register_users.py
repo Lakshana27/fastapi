@@ -12,4 +12,4 @@ def register_users(request, users_collection):
     user_data.update({"_id": str(users_collection.count_documents({}) + 1)})
     result = users_collection.insert_one(user_data)
     
-    return {"message": "User registered successfully", "id": str(result.inserted_id)}
+    return {"message": "User registered successfully", "id": result.inserted_id}
